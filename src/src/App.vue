@@ -1,8 +1,14 @@
 <script setup lang="ts">
+    import { RouterView, RouterLink } from 'vue-router'
+
     import Nav from './components/nav.vue'
 </script>
 
 <template>
-    <Nav />
-    <h1>Hello, World!</h1>
+    <nav>
+        <Nav />
+    </nav>
+    <main>
+        <RouterView />
+    </main>
 </template>

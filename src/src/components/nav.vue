@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">🏫 Info 2학년 8반</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
