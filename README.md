@@ -1,5 +1,38 @@
-# Vue 3 + TypeScript + Vite
+# Info28
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Info notification site for 2-8 class of paju jisan school in 2024
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## How to use
+
+- `/docs/how to en.md`: English document of how to use
+- `/docs/how to ko.md`: Korean document of how to use
+
+## Firebase
+
+Info28 use firebase as a database.
+So, CRUD of data is conducted by the owner of firebase.
+
+### Internal database structure
+
+> Use typescript to describe abstract firestore structure
+
+```ts
+type News {
+    name: string
+    subject: string
+    category: string
+    body: Array<string>
+    links: Array<string>
+    expire: { year: number, month: number, day: number }
+}
+
+type SuhangCollection = Array<News> // performance evaluation
+type InternalCollection = Array<News> // school activities
+type EmergencyCollection = Array<News> // some very very important things
+
+type Firestore = {
+    suhang: SuhangCollection
+    internal: InternalCollection
+    emergency: EmergencyCollection
+}
+```
