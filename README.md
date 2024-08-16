@@ -17,7 +17,7 @@ So, CRUD of data is conducted by the owner of firebase.
 > Use typescript to describe abstract firestore structure
 
 ```ts
-type News {
+type News = {
     name: string
     subject: string
     category: string
