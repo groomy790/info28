@@ -1,6 +1,8 @@
 <script setup lang="ts">
     import { GetSuhangCollection } from '../service/suhang'
 
+    import Card from '../components/card.vue'
+
     const collections = GetSuhangCollection()
 </script>
 

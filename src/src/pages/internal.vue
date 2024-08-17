@@ -1,6 +1,8 @@
 <script setup lang="ts">
     import { GetInternalCollection } from '../service/internal'
 
+    import Card from '../components/card.vue'
+
     const collections = GetInternalCollection()
 </script>
 

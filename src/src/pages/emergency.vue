@@ -1,6 +1,8 @@
 <script setup lang="ts">
     import { GetEmergencyCollection } from '../service/emergency'
 
+    import Card from '../components/card.vue'
+    
     const collections = GetEmergencyCollection()
 </script>
 
