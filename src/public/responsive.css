@@ -1,0 +1,10 @@
+.responsive {
+    width: 80vw;
+    margin: auto;
+}
+
+@media screen and (max-width: 1000px) {
+    .responsive {
+        width: 95vw;
+    }
+}

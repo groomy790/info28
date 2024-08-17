@@ -8,7 +8,7 @@
     <nav>
         <Nav />
     </nav>
-    <main>
+    <main class="responsive my-5">
         <RouterView />
     </main>
 </template>
