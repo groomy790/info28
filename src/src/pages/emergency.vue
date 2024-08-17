@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <h1>Hello, World!</h1>
+    <h1>비상 비상비상 비상 비상 비상 비상비상비상비상 비상!!!.!...!!!!.!..!!!!</h1>
 
     <div class="auto-grid my-2">
         <Card   v-for="item in collections"

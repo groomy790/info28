@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <h1>Hello, World!</h1>
+    <h1>교내 행사</h1>
 
     <div class="auto-grid my-2">
         <Card   v-for="item in collections"
