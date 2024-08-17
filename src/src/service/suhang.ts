@@ -1,28 +1,19 @@
-import { EmergencyCollection } from "../model/emergency"
+import { SuhangCollection, Suhang } from "../model/suhang"
 
-const FAKE_ASS_DATA: EmergencyCollection = [
-    {
-        name: "수학 논술형 수행",
-        subject: "수학",
-        category: "비상",
-        body: ["A", "Bㅁㄴㅇㅁㅇ", "asfafC"],
-        expire: { year: 2024, month: 12, day: 31},
-        links: [
-            { name: "asdad", url: "https://www.examplec.com" }
-        ]
-    },
-    {
-        name: "동아afafasdf",
-        subject: "기타",
-        category: "비상",
-        body: ["Aasf", "Bsafas1313fsadf", "Casdfasdf"],
-        expire: { year: 2024, month: 12, day: 31},
-        links: [
-            { name: "sf2g312341412412341ddad", url: "https://www.google.com" }
-        ]
-    }
-]
+import { firestoreDB } from "../firebase/init"
+import { collection, getDocs } from "firebase/firestore"
 
-export function GetSuhangCollection() {
-    return FAKE_ASS_DATA
+const firestore_suhang_collection = collection(firestoreDB, "suhang")
+
+export async function GetSuhangCollection() {
+    const collection: SuhangCollection = []
+
+    const snapshot = await getDocs(firestore_suhang_collection)
+    snapshot.forEach(item => {
+        collection.push(item.data() as unknown as Suhang)
+    })
+    
+    console.log("Suhang collection required:", collection)
+    
+    return collection
 }
