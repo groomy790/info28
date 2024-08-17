@@ -1,5 +1,28 @@
+<script lang="ts">
+    import { RouterLink } from 'vue-router'
+
+    interface Link {
+        name: string
+        url: string
+    }
+
+    const links: Array<Link> = [
+        { name: "수행 평가", url: "/suhang" },
+        { name: "교내 행사", url: "/internal" },
+        { name: "비상", url: "/emergency" }
+    ]
+
+    export default {
+        data() {
+            return {
+                links: links
+            }
+        }
+    }
+</script>
+
 <template>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light"   >
         <div class="container-fluid">
             <a class="navbar-brand" href="/">🏫 Info 2학년 8반</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -13,14 +36,8 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link 01</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link 02</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link 03</a>
+                        <li class="nav-item" data-bs-dismiss="offcanvas" v-for="(item) in links">
+                            <RouterLink class="nav-link" :to="item.url">{{ item.name }}</RouterLink>
                         </li>
                     </ul>
                 </div>
