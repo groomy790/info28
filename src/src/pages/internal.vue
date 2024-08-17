@@ -4,6 +4,8 @@
     import { InternalCollection } from '../model/internal'
     import Card from '../components/card.vue'
 
+    import { ExpireCheck } from '../utils/expirecheck'
+
     const collections = ref<InternalCollection>([])
 
     const fetchCollections = async () => {
@@ -29,6 +31,6 @@
           :body="item.body"
           :links="item.links"
           :expire="item.expire"
-          :deprecated="false" />
+          :deprecated="ExpireCheck(item.expire.year, item.expire.month, item.expire.day)" />
   </div>
 </template>
