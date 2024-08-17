@@ -12,7 +12,7 @@ Info notification site for 2-8 class of paju jisan school in 2024
 Info28 use firebase as a database.
 So, CRUD of data is conducted by the owner of firebase.
 
-### Internal database structure
+### Firestore structure
 
 > Use typescript to describe abstract firestore structure
 
