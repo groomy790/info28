@@ -1,28 +1,20 @@
 import { EmergencyCollection } from "../model/emergency"
+import { Emergency } from "../model/emergency"
 
-const FAKE_ASS_DATA: EmergencyCollection = [
-    {
-        name: "수능 신청",
-        subject: "전과목",
-        category: "비상",
-        body: ["A", "B", "C"],
-        expire: { year: 2024, month: 12, day: 31},
-        links: [
-            { name: "asdad", url: "https://www.google.com" }
-        ]
-    },
-    {
-        name: "동아리 신청",
-        subject: "기타",
-        category: "비상",
-        body: ["Aasf", "Bsafsadf", "Casdfasdf"],
-        expire: { year: 2024, month: 12, day: 31},
-        links: [
-            { name: "sf2gddad", url: "https://www.google.com" }
-        ]
-    }
-]
+import { firestoreDB } from "../firebase/init"
+import { collection, getDocs } from "firebase/firestore"
 
-export function GetEmergencyCollection() {
-    return FAKE_ASS_DATA
+const firestore_emergency_collection = collection(firestoreDB, "emergency")
+
+export async function GetEmergencyCollection() {
+    const collection: EmergencyCollection = []
+
+    const snapshot = await getDocs(firestore_emergency_collection)
+    snapshot.forEach(item => {
+        collection.push(item.data() as unknown as Emergency)
+    })
+    
+    console.log("Emergency collection required:", collection)
+    
+    return collection
 }
