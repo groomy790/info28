@@ -9,7 +9,8 @@
     const links: Array<Link> = [
         { name: "수행 평가", url: "/suhang" },
         { name: "교내 행사", url: "/internal" },
-        { name: "비상", url: "/emergency" }
+        { name: "비상", url: "/emergency" },
+        { name: "문의", url: "/contact" }
     ]
 
     export default {
